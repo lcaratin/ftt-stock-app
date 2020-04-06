@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('Product.IndexController', Controller);
+        .controller('Produto.IndexController', Controller);
 
-    function Controller(cadastroProdutoService,FlashService) {
+    function Controller(cadastroProdutoService,FlashService,$location) {
         var vm = this;
         vm.GetAll = GetAll;
         var lista_back;
@@ -36,14 +36,8 @@
         }
 
         function EditProduct(id) {
-            cadastroProdutoService.Delete(id)
-                .then(function () {
-                    FlashService.Success('Deleted');
-                    GetAll();
-                })
-                .catch(function (error) {
-                    FlashService.Error(error);
-                });
+            $location.path("/cadastroProduto/"+id)
+           
         }
 
     }

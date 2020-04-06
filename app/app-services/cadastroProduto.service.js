@@ -14,6 +14,8 @@
         service.Create = Create;
         service.Delete = Delete;
         service.Edit = Edit;
+        service.GetById = GetById;
+
         
         return service;
 
@@ -28,7 +30,7 @@
 
 
         function Create(nomeProduto) {
-            return $http.post(apiURL + '/register' , {productParam:nomeProduto}).then(handleSuccess, handleError);
+            return $http.post(apiURL + '/register' , nomeProduto).then(handleSuccess, handleError);
         }
 
         function Delete(_id) {
@@ -36,7 +38,11 @@
         }
 
         function Edit(_id,objProduct) {
-            return $http.put(apiURL + '/' + _id, {productParam:objProduct}).then(handleSuccess, handleError);
+            return $http.put(apiURL + '/' + _id, objProduct).then(handleSuccess, handleError);
+        }
+
+        function GetById(_id) {
+            return $http.get(apiURL + '/' + _id).then(handleSuccess, handleError);
         }
 
         // private functions

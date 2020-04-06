@@ -33,7 +33,7 @@
                 data: { activeTab: 'produto' }
             })
             .state('cadastroProduto', {
-                url: '/cadastroProduto',
+                url: '/cadastroProduto/{id}',
                 templateUrl: 'cadastroProduto/index.html',
                 controller: 'CadastroProduto.IndexController',
                 controllerAs: 'vm',
