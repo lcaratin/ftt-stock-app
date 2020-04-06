@@ -35,7 +35,7 @@
                 });
         }
 
-        function DeleteProduct(id) {
+        function EditProduct(id) {
             cadastroProdutoService.Delete(id)
                 .then(function () {
                     FlashService.Success('Deleted');
