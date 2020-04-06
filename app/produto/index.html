@@ -1,0 +1,29 @@
+#html question 
+<h1>Adicione um novo produto</h1>
+<div class="form-container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Caracteristica</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Valor de etiqueta na compra</th>
+                <th scope="col">Valor pago na compra</th>
+                <th scope="col">Valor para margem de 100%</th>
+                <th scope="col">Preço sugerido</th>
+                <th scope="col">Quantidade</th>
+
+              </tr>
+            </thead>
+            <tbody ng-repeat="x in vm.lista_back track by x._id">
+              <tr>
+                <td>{{x.question}}</td>  
+                <td scope="col"><button class="btn btn-primary" ng-click="vm.DeleteQuestion(x._id)">Delete </button><td>
+              </tr>
+            </tbody>
+          </table>
+    
+</div>

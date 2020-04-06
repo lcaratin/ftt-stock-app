@@ -24,6 +24,20 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
+            })
+            .state('produto', {
+                url: '/produto',
+                templateUrl: 'produto/index.html',
+                controller: 'Produto.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'produto' }
+            })
+            .state('cadastroProduto', {
+                url: '/cadastroProduto',
+                templateUrl: 'cadastroProduto/index.html',
+                controller: 'CadastroProduto.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'cadastroProduto' }
             });
     }
 

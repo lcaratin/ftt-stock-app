@@ -1,0 +1,48 @@
+<h1>Cadastre seu produto</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="firstName">Nome produto</label>
+            <input type="text" id="firstName" class="form-control" ng-model="vm.produto.name" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Tipo</label>
+            <input type="text" id="lastName" class="form-control" ng-model="vm.produto.type" required />
+        </div>
+        <div class="form-group">
+            <label for="username">Marca</label>
+            <input type="text" id="username" class="form-control" ng-model="vm.produto.brand" required />
+        </div>
+        <div class="form-group">
+            <label for="characteristic">Caracteristica</label>
+            <input type="text" id="characteristic" class="form-control" ng-model="vm.produto.characteristic" />
+        </div>
+        <div class="form-group">
+            <label for="Color">Color</label>
+            <input type="text" id="Color" class="form-control" ng-model="vm.produto.color" />
+        </div>
+        <div class="form-group">
+            <label for="size">Tamanho</label>
+            <input type="text" id="size" class="form-control" ng-model="vm.produto.size" />
+        </div>
+        <div class="form-group">
+            <label for="purchaseTagPrice">Valor de etiqueta na compra</label>
+            <input type="text" id="purchaseTagPrice" class="form-control" ng-model="vm.produto.purchaseTagPrice" />
+        </div>
+        <div class="form-group">
+            <label for="purchasePrice">Valor pago na compra</label>
+            <input type="text" id="purchasePrice" class="form-control" ng-model="vm.produto.purchasePrice" />
+        </div>
+        <div class="form-group">
+            <label for="suggestedPrice">Valor para margem de 100%</label>
+            <input type="text" id="suggestedPrice" class="form-control" value="{{vm.produto.purchasePrice * 2}}" />
+        </div>
+        <div class="form-group">
+            <label for="suggestedPrice">Preço sugerido</label>
+            <input type="text" id="suggestedPrice" class="form-control" ng-model="vm.produto.suggestedPrice" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveProduto()">Salvar</button>
+        </div>
+    </form>
+</div>

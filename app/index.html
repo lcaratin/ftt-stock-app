@@ -13,6 +13,8 @@
         <ul class="nav nav-tabs">
             <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
             <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
+            <li ng-class="{active: activeTab === 'produto'}"><a ui-sref="produto">Produto</a></li>
+            <li ng-class="{active: activeTab === 'cadastroProduto'}"><a ui-sref="cadastroProduto">Cadastro Produto</a></li>
             <li><a href="/login" target="_self">Logout</a></li>
         </ul>
         <div class="flash-message" ng-if="flash">
@@ -37,8 +39,12 @@
     <!-- application scripts -->
     <script src="app.js"></script>
     <script src="app-services/user.service.js"></script>
+    <script src="app-services/product.service.js"></script>
     <script src="app-services/flash.service.js"></script>
+    <script src="app-services/cadastroProduto.service.js"></script>
     <script src="home/index.controller.js"></script>
     <script src="account/index.controller.js"></script>
+    <script src="produto/index.controller.js"></script>
+    <script src="cadastroProduto/index.controller.js"></script>
 </body>
 </html>
