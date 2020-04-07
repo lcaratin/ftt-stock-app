@@ -3,19 +3,18 @@
 
     angular
         .module('app')
-        .controller('Produto.IndexController', Controller);
+        .controller('Transactions.IndexController', Controller);
 
-    function Controller(cadastroProdutoService,FlashService,$location) {
+    function Controller(transactionsService,FlashService,$location) {
         var vm = this;
         vm.GetAll = GetAll;
         var lista_back;
         vm.lista_back = lista_back;
-        vm.DeleteProduct = DeleteProduct;
-        vm.EditProduct = EditProduct;
+        vm.DeleteTransaction = DeleteTransaction;
         GetAll();
 
         function GetAll() {
-            cadastroProdutoService.GetAll()
+            transactionsService.GetAll()
                 .then(function (list_) {
                     vm.lista_back = list_;
                 })
@@ -24,8 +23,8 @@
                 });
         }
 
-        function DeleteProduct(id) {
-            cadastroProdutoService.Delete(id)
+        function DeleteTransaction(id) {
+            transactionsService.Delete(id)
                 .then(function () {
                     FlashService.Success('Deleted');
                     GetAll();
@@ -34,11 +33,5 @@
                     FlashService.Error(error);
                 });
         }
-
-        function EditProduct(id) {
-            $location.path("/cadastroProduto/"+id)
-
-        }
-
     }
 })();
