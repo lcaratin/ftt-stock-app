@@ -13,6 +13,7 @@
         service.GetAll = GetAll;
         service.Delete = Delete;
         service.Create = Create;
+        service.GetProductById = GetProductById;
 
         return service;
 
@@ -42,7 +43,11 @@
         function Create(transact) {
             return $http.post(apiURL + '/register' , transact).then(handleSuccess, handleError);
         }
-        
+
+        function GetProductById(_id) {
+            return $http.get("http://localhost:9050/api/products/" + _id).then(handleSuccess, handleError);
+        }
+
     }
 
 })();
