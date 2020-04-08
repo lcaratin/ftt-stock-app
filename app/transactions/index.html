@@ -1,22 +1,20 @@
 <div class= "form-container">
   <h2> Movimentar Estoque </h2>
   <table class="table">
-    <thead>
-      <tr>       
-        <th scope="col">Produto</th>
-        <th scope="col">Tipo de Movimento</th>
-        <th scope="col">Quantidade</th>
-      </tr>
-    </thead>    
     <form>
       <div class="form-group">
         <label for="Produto">Produto</label>
-        <input type="text" class="form-control" id="Produto" readonly><br>
+        <input type="text" class="form-control" id="Produto" ng-model="vm.transact.productId"readonly ><br>
         <label for="Quantidade">Quantidade</label>
-        <input type="text" class="form-control" id="Quantidade"><br>
-    </form>
-    <button class="btn btn-primary" ng-click="">Entrada</button> 
-    <button class="btn btn-primary" ng-click="">Saída</button><br>
+        <input type="number" class="form-control" id="Quantidade" ng-model="vm.transact.quantity"><br>
+        <label for="Tipo"> Tipo </label>
+        <select id="tipo" ng-model="vm.transact.transact" >
+          <option value="ENTRADA"> ENTRADA </option>
+          <option value="SAÍDA"> SAÍDA </option>
+        </select>
+        <br>
+    </form>    
+    <button class="btn btn-primary" ng-click="vm.createTransact()" >Movimentar </button> 
   </div>
 
 <h1>Movimentação de Estoque</h1>

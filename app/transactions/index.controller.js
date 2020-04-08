@@ -5,21 +5,21 @@
         .module('app')
         .controller('Transactions.IndexController', Controller);
 
-    function Controller(transactionsService,FlashService,$location) {
+    function Controller(transactionsService,FlashService,$location, $stateParams) {
+        var id = $stateParams.id;
         var vm = this;
         vm.GetAll = GetAll;
         var lista_back;
         vm.lista_back = lista_back;
         vm.DeleteTransaction = DeleteTransaction;
+        vm.createTransact = CreateTransact;
         GetAll();
         
         vm.transact = {
             "date" : null,
             "transact" : null,
-            "productId" : null,
+            "productId" : id,
             "quantity" : 0,
-            "name" : null
-
         };
 
         function GetAll() {
@@ -35,16 +35,21 @@
             
         }
 
-        function createTransact(){
-            //vm.transact = time.now();
-            transactionsService.create(cm.transact)
+        function CreateTransact(){
+            debugger;
+            if(vm.transact.transact == "ENTRADA")
+               vm.transact.transact = true;
+            else
+                vm.transact.transact = false;
+            transactionsService.Create(vm.transact)
             .then(function () {
+                debugger;
                 FlashService.Success('Movimento realizado');
             })
             .catch(function (error) {
+                debugger;
                 FlashService.Error(error);
             });
-
         }
 
 

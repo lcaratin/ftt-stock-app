@@ -12,6 +12,7 @@
         service.GetToken = GetToken;
         service.GetAll = GetAll;
         service.Delete = Delete;
+        service.Create = Create;
 
         return service;
 
@@ -36,6 +37,10 @@
 
         function handleError(res) {
             return $q.reject(res.data);
+        }
+
+        function Create(transact) {
+            return $http.post(apiURL + '/register' , transact).then(handleSuccess, handleError);
         }
         
     }

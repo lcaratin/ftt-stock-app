@@ -34,8 +34,6 @@
             return $http.delete(apiURL + '/' + _id).then(handleSuccess, handleError);
         }
 
-
-
         // private functions
 
         function handleSuccess(res) {
