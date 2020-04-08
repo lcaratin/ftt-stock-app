@@ -13,6 +13,15 @@
         vm.DeleteTransaction = DeleteTransaction;
         GetAll();
         
+        vm.transact = {
+            "date" : null,
+            "transact" : null,
+            "productId" : null,
+            "quantity" : 0,
+            "name" : null
+
+        };
+
         function GetAll() {
             transactionsService.GetAll()
                 .then(function (list_) {
@@ -25,6 +34,19 @@
                 });
             
         }
+
+        function createTransact(){
+            //vm.transact = time.now();
+            transactionsService.create(cm.transact)
+            .then(function () {
+                FlashService.Success('Movimento realizado');
+            })
+            .catch(function (error) {
+                FlashService.Error(error);
+            });
+
+        }
+
 
         function DeleteTransaction(id) {
             transactionsService.Delete(id)

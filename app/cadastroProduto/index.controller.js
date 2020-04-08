@@ -23,14 +23,13 @@
             "stockQuantity": 0
 
         };
+        
         vm.saveProduto = saveProduto;
         vm.deleteProduto = deleteProduto;
         vm.editProduto = editProduto;
         vm.id = id;
         vm.produtoNovo = produtoNovo;
         verificaUpdate();
-
-
 
         function saveProduto() {
             vm.produto.hundredPercentPrice = vm.produto.purchasePrice * 2;
