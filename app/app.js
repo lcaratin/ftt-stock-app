@@ -45,7 +45,14 @@
                 controller: 'Transactions.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'transactions' }
-             });
+            })
+             .state('cadastroMovimentacao', {
+                url: '/cadastroMovimentacao/{id}',
+                    templateUrl: 'cadastroMovimentacao/index.html',
+                    controller: 'CadastroMovimentacao.IndexController',
+                    controllerAs: 'vm',
+                    data: { activeTab: 'cadastroMovimentacao' }
+            });
     }
 
     function run($http, $rootScope, $window) {

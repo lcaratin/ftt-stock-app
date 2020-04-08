@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('transactionsService', Service);
+        .factory('cadastroMovimentacaoService', Service);
 
     function Service($http, $q) {
         var apiURL = "http://localhost:9050/api/transactions";
@@ -13,7 +13,8 @@
         service.GetAll = GetAll;
         service.Delete = Delete;
         service.Create = Create;
-        service.GetProductById = GetProductById;
+        service.GetById = GetById;
+
         // service.Edit = Edit;
 
 
@@ -27,6 +28,9 @@
         function GetAll() {
             return $http.get(apiURL).then(handleSuccess, handleError);
         }
+        function Create(transact) {
+            return $http.post(apiURL + '/register' , transact).then(handleSuccess, handleError);
+        }
 
         function Delete(_id) {
             return $http.delete(apiURL + '/' + _id).then(handleSuccess, handleError);
@@ -34,6 +38,10 @@
         // function Edit(_id,objTransaction) {
         //     return $http.put(apiURL + '/' + _id, objTransaction).then(handleSuccess, handleError);
         // }
+
+        function GetById(_id) {
+            return $http.get(apiURL + '/' + _id).then(handleSuccess, handleError);
+        }
 
         // private functions
 
@@ -45,14 +53,8 @@
             return $q.reject(res.data);
         }
 
-        function Create(transact) {
-            return $http.post(apiURL + '/register' , transact).then(handleSuccess, handleError);
-        }
-
-        function GetProductById(_id) {
-            return $http.get("http://localhost:9050/api/products/" + _id).then(handleSuccess, handleError);
-        }
-
+        
+        
     }
 
 })();
