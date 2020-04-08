@@ -38,7 +38,14 @@
                 controller: 'CadastroProduto.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'cadastroProduto' }
-            });
+            })
+            .state('transactions', {
+            url: '/transactions/{id}',
+                templateUrl: 'transactions/index.html',
+                controller: 'Transactions.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'transactions' }
+             });
     }
 
     function run($http, $rootScope, $window) {

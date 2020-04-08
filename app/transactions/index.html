@@ -1,0 +1,45 @@
+<div class= "form-container">
+  <h2> Movimentar Estoque </h2>
+  <table class="table">
+    <thead>
+      <tr>       
+        <th scope="col">Produto</th>
+        <th scope="col">Tipo de Movimento</th>
+        <th scope="col">Quantidade</th>
+      </tr>
+    </thead>    
+    <form>
+      <div class="form-group">
+        <label for="Produto">Produto</label>
+        <input type="text" class="form-control" id="Produto" readonly><br>
+        <label for="Quantidade">Quantidade</label>
+        <input type="text" class="form-control" id="Quantidade"><br>
+    </form>
+    <button class="btn btn-primary" ng-click="">Entrada</button> 
+    <button class="btn btn-primary" ng-click="">Saída</button><br>
+  </div>
+
+<h1>Movimentação de Estoque</h1>
+<div class="form-container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Tipo de Movimento</th>
+                <th scope="col">Qtd</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="x in vm.lista_back track by x._id">
+              <tr>
+                <td>{{x.date}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.type}}</td>
+                <td>{{x.quantity}}</td>
+                <td scope="col"><button class="btn btn-primary" ng-click="vm.DeleteTransaction(x._id)">Delete </button><td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+
+
