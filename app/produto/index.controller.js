@@ -12,6 +12,7 @@
         vm.lista_back = lista_back;
         vm.DeleteProduct = DeleteProduct;
         vm.EditProduct = EditProduct;
+        vm.CreateTrasact = CreateTrasact;
         GetAll();
 
         function GetAll() {
@@ -37,6 +38,11 @@
 
         function EditProduct(id) {
             $location.path("/cadastroProduto/"+id)
+
+        }
+
+        function CreateTrasact(id) {
+            $location.path("/transactions/"+id)
 
         }
 

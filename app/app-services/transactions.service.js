@@ -6,7 +6,7 @@
         .factory('transactionsService', Service);
 
     function Service($http, $q) {
-        var apiURL = "http://70.37.84.74:9050/api/transactions";
+        var apiURL = "http://localhost:9050/api/transactions";
         var service = {};
 
         service.GetToken = GetToken;

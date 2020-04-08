@@ -12,15 +12,18 @@
         vm.lista_back = lista_back;
         vm.DeleteTransaction = DeleteTransaction;
         GetAll();
-
+        
         function GetAll() {
             transactionsService.GetAll()
                 .then(function (list_) {
                     vm.lista_back = list_;
+                    console.log(vm.lista_back);
                 })
                 .catch(function (error) {
+                    console.log(error);
                     FlashService.Error(error);
                 });
+            
         }
 
         function DeleteTransaction(id) {

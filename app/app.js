@@ -40,7 +40,7 @@
                 data: { activeTab: 'cadastroProduto' }
             })
             .state('transactions', {
-            url: '/transactions',
+            url: '/transactions/{id}',
                 templateUrl: 'transactions/index.html',
                 controller: 'Transactions.IndexController',
                 controllerAs: 'vm',
