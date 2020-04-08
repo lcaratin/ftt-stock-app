@@ -42,7 +42,7 @@
         }
 
         function CreateTrasact(id) {
-            $location.path("/transactions/"+id)
+            $location.path("/cadastroMovimentacao/"+id)
 
         }
 

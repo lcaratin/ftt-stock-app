@@ -16,6 +16,8 @@
             <li ng-class="{active: activeTab === 'produto'}"><a ui-sref="produto">Produto</a></li>
             <li ng-class="{active: activeTab === 'cadastroProduto'}"><a ui-sref="cadastroProduto">Cadastro Produto</a></li>
             <li ng-class="{active: activeTab === 'transactions'}"><a ui-sref="transactions">Movimentação de Estoque</a></li>
+            <li ng-class="{active: activeTab === 'cadastroMovimentacao'}"><a ui-sref="cadastroMovimentacao">Cadastro Movimentação</a></li>
+
             <li><a href="/login" target="_self">Logout</a></li>
         </ul>
         <div class="flash-message" ng-if="flash">
@@ -43,11 +45,15 @@
     <script src="app-services/product.service.js"></script>
     <script src="app-services/flash.service.js"></script>
     <script src="app-services/cadastroProduto.service.js"></script>
-    <script src="app-services/transactions.service.js"></script>
+    <script src="app-services/cadastroMovimentacao.service.js"></script>
+
     <script src="home/index.controller.js"></script>
     <script src="account/index.controller.js"></script>
     <script src="produto/index.controller.js"></script>
     <script src="cadastroProduto/index.controller.js"></script>
     <script src="transactions/index.controller.js"></script>
+    <script src="cadastroMovimentacao/index.controller.js"></script>
+
+    
 </body>
 </html>

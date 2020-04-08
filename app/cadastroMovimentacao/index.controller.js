@@ -3,27 +3,28 @@
 
     angular
         .module('app')
-        .controller('Transactions.IndexController', Controller);
+        .controller('CadastroMovimentacao.IndexController', Controller);
 
-    function Controller(transactionsService,FlashService,$location, $stateParams) {
+    function Controller(cadastroMovimentacaoService,FlashService,$location, $stateParams) {
         var id = $stateParams.id;
         var vm = this;
-        vm.GetAll = GetAll;
-        var lista_back;
-        vm.lista_back = lista_back;
-        vm.DeleteTransaction = DeleteTransaction;
-        vm.createTransact = CreateTransact;
-        GetAll();
-        
         vm.transact = {
             "date" : null,
             "transact" : null,
             "productId" : id,
             "quantity" : 0,
         };
+        // vm.GetAll = GetAll;
+        // var lista_back;
+        // vm.lista_back = lista_back;
+        vm.DeleteTransaction = DeleteTransaction;
+        vm.createTransact = CreateTransact;
+        GetAll();
+        
+        
 
         function GetAll() {
-            transactionsService.GetAll()
+            cadastroMovimentacaoService.GetAll()
                 .then(function (list_) {
                     vm.lista_back = list_;
                     console.log(vm.lista_back);
@@ -40,7 +41,7 @@
                vm.transact.transact = true;
             else
                 vm.transact.transact = false;
-            transactionsService.Create(vm.transact)
+            cadastroMovimentacaoService.Create(vm.transact)
             .then(function () {
                 FlashService.Success('Movimento realizado');
             })
@@ -51,7 +52,7 @@
 
 
         function DeleteTransaction(id) {
-            transactionsService.Delete(id)
+            cadastroMovimentacaoService.Delete(id)
                 .then(function () {
                     FlashService.Success('Deleted');
                     GetAll();
