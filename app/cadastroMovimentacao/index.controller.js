@@ -8,6 +8,9 @@
     function Controller(cadastroMovimentacaoService,FlashService,$location, $stateParams) {
         var id = $stateParams.id;
         var vm = this;
+        vm.GetAll = GetAll;
+        var lista_back;
+        vm.lista_back = lista_back;
         vm.transact = {
             "date" : null,
             "transact" : null,
@@ -18,8 +21,12 @@
         // var lista_back;
         // vm.lista_back = lista_back;
         vm.DeleteTransaction = DeleteTransaction;
-        vm.createTransact = CreateTransact;
+        vm.createTransact = CreateTransact;        
         GetAll();
+        var productName;
+        vm.productName = productName;
+        GetProductById();
+        vm.GetProductById = GetProductById;
         
         
 
@@ -41,6 +48,18 @@
                vm.transact.transact = true;
             else
                 vm.transact.transact = false;
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+
+            today = dd + '/' + mm + '/' + yyyy;
+
+            vm.transact.date = today;
+
+            vm.transact.name = vm.productName;
+
             cadastroMovimentacaoService.Create(vm.transact)
             .then(function () {
                 FlashService.Success('Movimento realizado');
@@ -60,6 +79,16 @@
                 .catch(function (error) {
                     FlashService.Error(error);
                 });
+        }
+
+        function GetProductById(){
+            cadastroMovimentacaoService.GetProductById($stateParams.id)
+             .then(function (resp) {
+                vm.productName = resp.name;
+            })
+            .catch(function (error) {
+                FlashService.Error(error);
+            });
         }
     }
 })();

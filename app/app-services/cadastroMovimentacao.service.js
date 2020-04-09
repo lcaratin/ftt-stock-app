@@ -14,6 +14,8 @@
         service.Delete = Delete;
         service.Create = Create;
         service.GetById = GetById;
+        service.GetProductById = GetProductById;
+
 
         // service.Edit = Edit;
 
@@ -51,6 +53,10 @@
 
         function handleError(res) {
             return $q.reject(res.data);
+        }
+        
+        function GetProductById(_id) {
+            return $http.get("http://localhost:9050/api/products/" + _id).then(handleSuccess, handleError);
         }
 
         
