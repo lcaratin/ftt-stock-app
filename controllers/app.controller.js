@@ -1,5 +1,6 @@
 ﻿var express = require('express');
 var router = express.Router();
+var hideMov = true;
 
 // use session auth to secure the angular app files
 router.use('/', function (req, res, next) {

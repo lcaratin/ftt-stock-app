@@ -22,7 +22,7 @@
         // vm.lista_back = lista_back;
         vm.DeleteTransaction = DeleteTransaction;
         vm.createTransact = CreateTransact;        
-        GetAll();
+        GetAll();        
         var productName;
         vm.productName = productName;
         GetProductById();
@@ -48,6 +48,7 @@
                vm.transact.transact = true;
             else
                 vm.transact.transact = false;
+            
 
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
@@ -61,8 +62,9 @@
             vm.transact.name = vm.productName;
 
             cadastroMovimentacaoService.Create(vm.transact)
-            .then(function () {
+            .then(function () {                
                 FlashService.Success('Movimento realizado');
+                $location.path("/produto");
             })
             .catch(function (error) {
                 FlashService.Error(error);

@@ -30,7 +30,7 @@
         function GetAll() {
             transactionsService.GetAll()
                 .then(function (list_) {
-                    vm.lista_back = list_;
+                    vm.lista_back = list_.reverse();
                     console.log(vm.lista_back);
                 })
                 .catch(function (error) {
