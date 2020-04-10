@@ -13,7 +13,7 @@
         vm.lista_back = lista_back;
         vm.transact = {
             "date" : null,
-            "transact" : null,
+            "transact" : "ENTRADA",
             "productId" : id,
             "quantity" : 0,
         };
