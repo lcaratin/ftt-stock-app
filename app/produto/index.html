@@ -1,4 +1,4 @@
-<h1>Adicione um novo produto</h1>
+<h1>Produtos</h1>
 <div class="form-container">
         <table class="table">
             <thead>
@@ -9,13 +9,13 @@
                 <th scope="col">Caracteristica</th>
                 <th scope="col">Cor</th>
                 <th scope="col">Tamanho</th>
-                <th scope="col">Valor de etiqueta na compra</th>
-                <th scope="col">Valor pago na compra</th>
-                <th scope="col">Valor para margem de 100%</th>
+                <th scope="col">Valor de etiqueta</th>
+                <th scope="col">Valor de compra</th>
+                <th scope="col">Margem de 100%</th>
                 <th scope="col">Preço sugerido</th>
                 <th scope="col">Quantidade</th>
-                <th scope="col">Delete</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Deletar</th>
+                <th scope="col">Editar</th>
                 <th scope="col">Movimentar</th>
               </tr>
             </thead>
@@ -33,9 +33,9 @@
                 <td>{{x.suggestedPrice}}</td>  
                 <td>{{x.stockQuantity}}</td> 
 
-                <td scope="col"><button class="btn btn-primary" ng-click="vm.DeleteProduct(x._id)">Delete </button><td>
-                <td scope="col"><button class="btn btn-primary" ng-click="vm.EditProduct(x._id)">Edit </button><td></td>
-                <td scope="col"><button class="btn btn-primary" ng-click="vm.CreateTrasact(x._id)">Movimentar</button><td></td>
+                <td><button class="btn btn-primary" ng-click="vm.DeleteProduct(x._id)">Deletar </button></td>
+                <td><button class="btn btn-primary" ng-click="vm.EditProduct(x._id)">Editar</button></td>
+                <td><button class="btn btn-primary" ng-click="vm.CreateTrasact(x._id)">Movimentar</button></td>
               </tr>
             </tbody>
           </table>

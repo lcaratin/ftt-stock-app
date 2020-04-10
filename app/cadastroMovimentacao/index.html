@@ -8,7 +8,8 @@
           <label for="Quantidade">Quantidade</label>
           <input type="number" class="form-control" id="Quantidade" ng-model="vm.transact.quantity"><br>
           <label for="Tipo"> Tipo </label>
-          <select id="tipo" ng-model="vm.transact.transact" >
+          <select class ="form-control" id="tipo" ng-model="vm.transact.transact">
+            <option selected disabled value="selecione"> -SELECIONE- </option>
             <option value="ENTRADA"> ENTRADA </option>
             <option value="SAÍDA"> SAÍDA </option>
           </select>

@@ -11,14 +11,14 @@
     <!-- header -->
     <header>
         <ul class="nav nav-tabs">
-            <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
-            <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
+            <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Início</a></li>
+            <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Sua Conta</a></li>
             <li ng-class="{active: activeTab === 'produto'}"><a ui-sref="produto">Produto</a></li>
             <li ng-class="{active: activeTab === 'cadastroProduto'}"><a ui-sref="cadastroProduto">Cadastro Produto</a></li>
             <li ng-class="{active: activeTab === 'transactions'}"><a ui-sref="transactions">Movimentação de Estoque</a></li>
             <li ng-class="{active: activeTab === 'cadastroMovimentacao'}"><a ui-sref="cadastroMovimentacao">Cadastro Movimentação</a></li>
 
-            <li><a href="/login" target="_self">Logout</a></li>
+            <li><a href="/login" target="_self">Sair</a></li>
         </ul>
         <div class="flash-message" ng-if="flash">
             <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
