@@ -15,7 +15,7 @@
                 <td>{{x.name}}</td>
                 <td>{{(x.transact ? "ENTRADA" : "SAÍDA")}}</td>
                 <td>{{x.quantity}}</td>
-                <td scope="col"><button class="btn btn-primary" ng-click="vm.DeleteTransaction(x._id)">Deletar </button><td>
+                <td scope="col"><button class="btn btn-danger" ng-click="vm.DeleteTransaction(x._id)">Deletar </button><td>
               </tr>
             </tbody>
           </table>
